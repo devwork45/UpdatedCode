@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+        <h1>Edit Employee</h1>
+
+        <form method="post" action="/employees/<%= employee._id %>?_method=PUT" class="needs-validation" novalidate >
+
+            <!-- Employee Name -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" value="<%= employee.name %>" class="form-control" required/>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Employee Position -->
+            <div class="mb-3">
+                <label for="position" class="form-label">Position</label>
+                <input type="text" name="position" value="<%= employee.position %>" class="form-control" required/>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Employee Department -->
+            <div class="mb-3">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" name="department" value="<%= employee.department %>" class="form-control" required/>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Employee Image -->
+            <div class="mb-3">
+                Original Employee Image<br/>
+                <img src="<%= employee.profilePhoto.url %>" style="max-width: 250px; height: 200px;" />
+            </div>
+
+            <!-- New Employee Image URL -->
+            <div class="mb-3">
+                <label for="employeeUrl" class="form-label">Employee Image Link</label>
+                <input type="text" name="profilePhoto[url]" value="<%= employee.profilePhoto.url %>" placeholder="Enter new employee Image URL:" class="form-control" />
+                <div class="invalid-feedback">Please enter a valid URL.</div>
+            </div>
+
+            <!-- Employee Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="contactInformation[email]" value="<%= employee.contactInformation.email %>" class="form-control" required/>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Employee Phone -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" name="contactInformation[phone]" value="<%= employee.contactInformation.phone %>" class="form-control" required/>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Employee Address -->
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" name="address[street]" value="<%= employee.address.street %>" class="form-control" placeholder="Street" required/>
+                <input type="text" name="address[city]" value="<%= employee.address.city %>" class="form-control" placeholder="City" required/>
+                <input type="text" name="address[state]" value="<%= employee.address.state %>" class="form-control" placeholder="State" required/>
+                <input type="text" name="address[postalCode]" value="<%= employee.address.postalCode %>" class="form-control" placeholder="Postal Code" required/>
+                <input type="text" name="address[country]" value="<%= employee.address.country %>" class="form-control" placeholder="Country" required/>
+            </div>
+
+            <!-- Employee Salary -->
+            <div class="mb-3">
+                <label for="salary" class="form-label">Salary</label>
+                <input type="number" name="salary" value="<%= employee.salary %>" class="form-control" required/>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-dark edit-btn mt-3">Edit</button>
+        </form>
+
+        <br>
+        
+    </div>
+</div>

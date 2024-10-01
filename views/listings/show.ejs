@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="employee-detail-card">
+                <div class="row">
+                    
+                    <div class="col-md-8">
+                        <h2 class="employee-detail-name"><%= employee.name %></h2>
+                        <p><strong>Employee ID:</strong> <%= employee.employeeId %></p>
+                        <p><strong>Position:</strong> <%= employee.position %></p>
+                        <p><strong>Department Number:</strong> <%= employee.dept %></p>
+                        <p><strong>Starting Year:</strong> <%= employee.starting_year %></p>
+                        <p><strong>Total Attendance:</strong> <%= employee.total_attendance %></p>
+                        <p><strong>Last Attendance Time:</strong> <%= employee.last_attendance_time.toLocaleString() %></p>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex justify-content-end">
+                <a href="/employees/<%= employee._id %>/generate-report" class="btn btn-success me-2">Generate Report</a>
+
+                <a href="/employees/<%= employee._id %>/edit" class="btn me-2" id="buttonColor">Edit Employee</a>
+                <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn" id="buttonColor2">Delete Employee</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

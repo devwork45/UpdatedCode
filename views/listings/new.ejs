@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+        <h3>Add a New Employee</h3>
+
+        <form method="post" action="/employees" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" placeholder="Enter name:" class="form-control" required />
+                <div class="invalid-feedback">Please enter the name.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="employeeId" class="form-label">Employee ID</label>
+                <input type="text" name="employeeId" placeholder="Enter employee ID:" class="form-control" required />
+                <div class="invalid-feedback">Please enter the employee ID.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="position" class="form-label">Position</label>
+                <input type="text" name="position" placeholder="Enter position:" class="form-control" required />
+                <div class="invalid-feedback">Please enter the position.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" placeholder="Enter email:" class="form-control" required />
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="starting_year" class="form-label">Starting Year</label>
+                <input type="number" name="starting_year" placeholder="Enter starting year:" class="form-control" required />
+                <div class="invalid-feedback">Please enter the starting year.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="total_attendance" class="form-label">Total Attendance</label>
+                <input type="number" name="total_attendance" placeholder="Enter total attendance:" class="form-control" value="0" required />
+                <div class="invalid-feedback">Please enter the total attendance.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="last_attendance_time" class="form-label">Last Attendance Time</label>
+                <input type="datetime-local" name="last_attendance_time" class="form-control" required />
+                <div class="invalid-feedback">Please enter the last attendance time.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="dept" class="form-label">Department Number</label>
+                <input type="number" name="dept" placeholder="Enter department number:" class="form-control" required />
+                <div class="invalid-feedback">Please enter the department number.</div>
+            </div>
+
+            <button class="btn btn-dark add-btn mt-3">Add Employee</button>
+        </form>
+        <br>
+    </div>
+</div>

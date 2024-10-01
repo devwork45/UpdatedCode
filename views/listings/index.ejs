@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate") %> <!-- Specifies the layout file to use, assuming it's a custom layout system -->
+
+<body>
+    <main> <!-- Main content area -->
+        <div class="employee-container"> <!-- Container for employee cards, using a grid layout -->
+            <% employees.forEach(employee => { %> <!-- Iterates over the employees array and renders each employee's card -->
+                <a href="/employees/<%= employee._id %>" class="employee-card"> <!-- Link to the employee detail page -->
+                    <div class="employee-info"> <!-- Section for employee information -->
+                        <h2><b><%= employee.name %></b></h2> <!-- Displays employee's name -->
+                        <p><strong>Position:</strong> <%= employee.position %></p> <!-- Displays employee's position -->
+                        <p><strong>Email:</strong> <%= employee.email %></p> <!-- Displays employee's email -->
+                        <p><strong>Starting Year:</strong> <%= employee.starting_year %></p> <!-- Displays employee's starting year -->
+                        <p><strong>Total Attendance:</strong> <%= employee.total_attendance %></p> <!-- Displays employee's total attendance -->
+                    </div>
+                </a>
+            <% }) %> <!-- End of the loop -->
+        </div>
+        
+    </main>
+</body>
+</html>
